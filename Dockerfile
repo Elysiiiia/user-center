@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-8-alphe as builder
+FROM openjdk:17.0.12-jdk-slim as builder
 
 WORKDIR /app
 COPY pom.xml .
