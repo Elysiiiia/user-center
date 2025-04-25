@@ -1,4 +1,6 @@
-FROM openjdk:17.0.12-jdk-slim as builder
+FROM docker.io/maven:3.8.5-openjdk-17 as builder
+# 其他指令...
+
 
 WORKDIR /app
 COPY pom.xml .
