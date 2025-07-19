@@ -1,7 +1,12 @@
 package com.example.demo.service;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
+
 import com.example.demo.service.impl.UserServiceImpl;
 
 import com.example.demo.model.domain.User;
@@ -77,4 +82,12 @@ class UserServiceTest {
         result= userService.userRegister(userAccount,password,checkPassword,planetCode);
         assertTrue(result>0);
     }
+
+    @Test
+    public void testSearchUsersByTags() {
+        List<String> tagNameList= Arrays.asList("java");
+        List<User> userList =userService.searcherUsersByTags(tagNameList);
+        Assertions.assertNotNull(userList);
+    }
+
 }

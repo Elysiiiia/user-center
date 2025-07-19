@@ -1,4 +1,7 @@
 spring:
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: Asia/Shanghai
   application:
     name:  user-center
 # DataSource Config
@@ -10,13 +13,27 @@ spring:
     #session失效时间
   session:
     timeout: 864000
+  mvc:
+    path match:
+      matching-strategy: ANT_PATH_MATCHER
+  #redis配置
+  data:
+    redis:
+      database: 0
+      port: 6379
+      host: localhost
+      password: ""
 server:
   port: 8080
   servlet:
     context-path: /api
+    session:
+      cookie:
+        domain:
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
       db-config:
         logic-delete-field: isDelete # 全局逻辑删除字段名
