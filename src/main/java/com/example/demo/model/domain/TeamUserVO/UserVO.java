@@ -1,23 +1,13 @@
-package com.example.demo.model.domain;
+package com.example.demo.model.domain.TeamUserVO;
 
-import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * 用户
- * &#064;TableName  user
- */
-@TableName(value = "user")
-@Data
-public class User implements  Serializable {
-    /**
-     * 主键ID
-     */
-    @TableId(type = IdType.AUTO)
+
+public class UserVO implements Serializable {
+
     private Long id;
 
     /**
@@ -40,10 +30,6 @@ public class User implements  Serializable {
      */
     private Integer gender;
 
-    /**
-     * 用户密码
-     */
-    private String userpassword;
 
     /**
      * 电话
@@ -81,30 +67,9 @@ public class User implements  Serializable {
      */
     private String planetCode;
 
-    /**
-     * 是否删除
-     */
 
     private String tags;
 
-    /**
-     * 标签
-     */
-
-    private String profile;
-    /**
-     * 个人简介
-     */
-    @TableLogic
-    private Integer isDelete;
-
-
-
-    // 无参构造函数
-    public User() {
-    }
-
-    // 为所有字段添加 getter 和 setter 方法
     public Long getId() {
         return id;
     }
@@ -120,11 +85,6 @@ public class User implements  Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
-
-    public String getPlanetCode() {return planetCode;}
-
-    public void setPlanetCode(String planetCode) {this.planetCode=planetCode;}
-
 
     public String getUseraccount() {
         return useraccount;
@@ -148,14 +108,6 @@ public class User implements  Serializable {
 
     public void setGender(Integer gender) {
         this.gender = gender;
-    }
-
-    public String getUserpassword() {
-        return userpassword;
-    }
-
-    public void setUserpassword(String userpassword) {
-        this.userpassword = userpassword;
     }
 
     public String getPhone() {
@@ -182,6 +134,14 @@ public class User implements  Serializable {
         this.userstatus = userstatus;
     }
 
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -198,45 +158,12 @@ public class User implements  Serializable {
         this.updateTime = updateTime;
     }
 
-    public Integer getIsDelete() {
-        return isDelete;
+    public String getPlanetCode() {
+        return planetCode;
     }
 
-    public void setIsDelete(Integer isDelete) {
-        this.isDelete = isDelete;
-    }
-
-    // 原有的自定义方法保留
-    public String getAccount() {
-        return useraccount;
-    }
-
-    public void setAccount(String useraccount) {
-        this.useraccount = useraccount;
-    }
-
-    public String getPassword() {
-        return userpassword;
-    }
-
-    public void setPassword(String userpassword) {
-        this.userpassword = userpassword;
-    }
-
-    public Integer getStatus() {
-        return userstatus;
-    }
-
-    public void setStatus(Integer userstatus) {
-        this.userstatus = userstatus;
-    }
-
-    public Integer getRole() {
-        return role;
-    }
-
-    public void setRole(Integer role) {
-        this.role = role;
+    public void setPlanetCode(String planetCode) {
+        this.planetCode = planetCode;
     }
 
     public String getTags() {
@@ -247,11 +174,8 @@ public class User implements  Serializable {
         this.tags = tags;
     }
 
-    public String getProfile() {
-        return profile;
-    }
+    /**
+     * 标签
+     */
 
-    public void setProfile(String profile) {
-        this.profile = profile;
-    }
 }

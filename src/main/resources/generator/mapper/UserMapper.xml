@@ -19,12 +19,14 @@
             <result property="isDelete" column="isDelete" />
             <result property="role" column="role" />
             <result property="planetCode" column="planetCode" />
+            <result property="tags" column="tags" />
+            <result property="profile" column="profile" />
     </resultMap>
 
     <sql id="Base_Column_List">
         id,username,useraccount,avatarUrl,gender,userpassword,
         phone,email,userstatus,createTime,updateTime,
         isDelete,列_name,列_name_2,列_name_3,column_name,
-        role,planetCode
+        role,planetCode,tags,profile
     </sql>
 </mapper>
